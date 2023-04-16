@@ -11,7 +11,7 @@
 - name: AWS
   weight: 2
 
-- name: VS Code
+- name: Microsoft Office
   weight: 2
 
 - name: Figma
@@ -21,4 +21,7 @@
   weight: 2
 
 - name: Jupyter
+  weight: 2
+
+- name: Atlassian
   weight: 2
