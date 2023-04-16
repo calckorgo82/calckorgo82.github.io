@@ -17,45 +17,44 @@
 #     - tag: Rails
 #   timeline-side: right
 
-- title: airbnb
-  title-url: https://example.com/
-  date: Sep 2019 - Present
-  subtitle: Fullstack Developer
-  tags:
-    - tag: React
-    - tag: Javascript
-    - tag: Ruby
-    - tag: Rails
-  timeline-side: right
-
-- title: Google
-  title-url: https://example.com/
-  date: Mar 2019 - Sep 2019
-  subtitle: Software Engineer as Intern
-  tags:
-    - tag: Flutter
-    - tag: Dart
-    - tag: Keycloak
-  timeline-side: right
-
-- title: Super University
-  title-url: https://example.com/
-  date: 2017 - 2019
-  subtitle: M.Sc. Computer Science
+- title: Bergen County Academies
+  title-url: https://www.bergen.org/bergencountyacademies
+  date: Sep 2015 - June 2019
+  subtitle: Academy of Medical Science Technology
   timeline-side: left
 
-- title: Facebook
-  title-url: https://example.com/
-  date: Sep 2017 - Mar 2019
-  subtitle: Front-End Developer as Intern
-  tags:
-    - tag: React
-    - tag: Node
-    - tag: Javascript
+- title: Harvard University
+  title-url: https://www.harvard.edu/
+  date: Aug 2019 - Present
+  subtitle: A.B. in Statistics, Data Science
   timeline-side: right
 
-- title: Super University
-  title-url: https://example.com/
-  date: 2014 - 2017
-  subtitle: B.A. Computer Science
+
+- title: Boston Consulting Group
+  title-url: https://www.bcg.com/
+  date: Jul 2020 - Aug 2020
+  subtitle: Associate Intern
+  tags:
+    - tag: Excel
+  timeline-side: left
+
+- title: Backbone Software
+  title-url: https://backboneiq.com/
+  date: Jun 2021 - Aug 2021
+  subtitle: Data Analyst Intern
+  tags:
+    - tag: BI Tools
+    - tag: SQL
+    - tag: Python
+  timeline-side: right
+
+- title: iCapital (formerly SIMON Markets)
+  title-url: https://simon.io/
+  date: Jun 2022 - Aug 2022
+  subtitle: Data Engineering Intern
+  tags:
+    - tag: Python
+    - tag: AWS
+    - tag: Apache Airflow
+    - tag: SQL
   timeline-side: left

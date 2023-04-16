@@ -13,21 +13,34 @@
 #     - tag: AngularJS
 #     - tag: Node
 
-- name: project X
-  descr: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam"
-  demo: https://example.com/
+- name: SwapR Marketplace
+  descr: "Founded a used goods marketplace that offers a safe and convenient solution for trading used goods within communities, eliminating the risks and inconveniences associated with in-person transactions. Conducted user interviews with 100+ potential users, and launched an MVP using an Instagram page and a web application, gaining 100+ users and facilitating 50+ transactions in 2 weeks."
   tags:
-    - tag: MongoDB
-    - tag: Express
-    - tag: AngularJS
-    - tag: Node
+    - tag: UI/UX
+    - tag: GlideApps
+    - tag: Figma
+    - tag: Product Strategy
 
-- name: project Y
-  descr: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam"
-  demo: https://example.com/
+- name: MLB Win Percentage Prediction
+  descr: "Created prediction models with machine learning to accurately determine how many wins a certain MLB team was going to have in the following year, utilizing data from 1997 to 2022."
+  github: https://github.com/calckorgo82/mlb-winloss-prediction
   tags:
     - tag: Python
-    - tag: Django
+    - tag: R
 
-- name: project Z
-  descr: "You can also set a project without demo link and no tags"
+- name: FIFA Team/Player Analysis
+  descr: "Predicted soccer player and team performance through linear regression, random forests, and boosting methods, and determined what attributes constitutes a good player/team."
+  github: https://github.com/calckorgo82/fifa
+  tags:
+    - tag: Python
+    - tag: R
+
+- name: Stock Trading Web Application
+  descr: "Web application where users can register to trade stocks real-time with play money, using IEX stock API."
+  github: https://github.com/calckorgo82/stockwebapp
+  tags:
+    - tag: Python
+    - tag: Flask
+    - tag: HTML
+    - tag: CSS
+    - tag: Javascript
