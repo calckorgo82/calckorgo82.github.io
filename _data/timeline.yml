@@ -48,7 +48,18 @@
     - tag: Python
   timeline-side: right
 
-- title: Capital One
+- title: iCapital (formerly SIMON Markets)
+  title-url: https://simon.io/
+  date: Jun 2022 - Aug 2022
+  subtitle: Data Engineering Intern
+  tags:
+    - tag: Python
+    - tag: AWS
+    - tag: Apache Airflow
+    - tag: SQL
+  timeline-side: left
+
+  - title: Capital One
   title-url: https://www.capitalone.com/
   date: Aug 2023 - Present
   subtitle: Associate Product Manager
@@ -57,4 +68,4 @@
     - tag: Model Monitoring
     - tag: Upmarket Card
     - tag: Web and Mobile Front End
-  timeline-side: left
+  timeline-side: right
