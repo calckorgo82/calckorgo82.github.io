@@ -17,18 +17,12 @@
 #     - tag: Rails
 #   timeline-side: right
 
-- title: Bergen County Academies
-  title-url: https://www.bergen.org/bergencountyacademies
-  date: Sep 2015 - June 2019
-  subtitle: Academy of Medical Science Technology
-  timeline-side: left
 
 - title: Harvard University
   title-url: https://www.harvard.edu/
   date: Aug 2019 - Present
   subtitle: A.B. in Statistics, Data Science
   timeline-side: right
-
 
 - title: Boston Consulting Group
   title-url: https://www.bcg.com/
