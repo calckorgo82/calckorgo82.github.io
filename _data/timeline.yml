@@ -17,7 +17,6 @@
 #     - tag: Rails
 #   timeline-side: right
 
-
 - title: Harvard University
   title-url: https://www.harvard.edu/
   date: Aug 2019 - Present
@@ -53,7 +52,7 @@
     - tag: SQL
   timeline-side: left
 
-  - title: Capital One
+- title: Capital One
   title-url: https://www.capitalone.com/
   date: Aug 2023 - Present
   subtitle: Associate Product Manager
