@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Mail, Phone, Github, ExternalLink, Download, MapPin, Calendar, Award, Code, Database, Briefcase } from 'lucide-react';
+import { ChevronDown, Mail, Phone, Github, ExternalLink, Download, MapPin, Calendar, Award, Code, Linkedin } from 'lucide-react';
 
 const Portfolio = () => {
   const [isVisible, setIsVisible] = useState({});
   const [currentSection, setCurrentSection] = useState('hero');
+  const [formState, setFormState] = useState({ name: '', email: '', message: '' });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,6 +28,12 @@ const Portfolio = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // MOVED THE FUNCTION HERE
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormState(prevState => ({ ...prevState, [name]: value }));
+  };
 
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
@@ -107,7 +114,7 @@ const Portfolio = () => {
                   Korean-born Harvard graduate and product leader driven by leveraging a unique blend of statistical expertise and bicultural perspective to build transformative solutions that reshape how people approach the world.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  Currently serving as a Deployment Strategist at Palantir Technologies, I specialize in bridging the gap between complex data systems and real-world applications. My experience spans product management, data science, and strategic implementation across fintech and government sectors.
+                  Currently serving as a Deployment Strategist at Palantir Technologies, I specialize in bridging the gap between complex data systems to create real-world applications that leverage AI. My experience spans product management, data science, and strategic implementation across fintech and government sectors.
                 </p>
                 <div className="flex items-center gap-4 text-gray-500">
                   <MapPin className="w-5 h-5" />
@@ -115,7 +122,6 @@ const Portfolio = () => {
                 </div>
               </div>
               <div className="flex justify-center">
-                {/* Replace this div with an img tag for your photo */}
                 <img 
                   src="/photo.jpg" 
                   alt="A professional photo of Danny Kim" 
@@ -256,7 +262,6 @@ const Portfolio = () => {
                     </div>
                     <div className="flex items-center justify-between mt-auto">
                       <span className="text-sm text-green-600">{project.status}</span>
-                      {/* The button is no longer needed since the whole card is a link */}
                     </div>
                   </div>
                 </a>
@@ -273,10 +278,14 @@ const Portfolio = () => {
             <h2 className="text-4xl font-bold mb-16 text-center">Resume</h2>
             
             <div className="text-center mb-12">
-              <a href="/resume.pdf" download>
+              <a 
+                href="https://docs.google.com/document/d/1wgXjoNKEW_FpTLz4521kiyZ_IBSxWi4ocFpmBXlpZfc/edit?usp=sharing" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
                 <button className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white rounded-xl font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105">
                   <Download className="w-5 h-5" />
-                  Download Full Resume
+                  View Full Resume
                 </button>
               </a>
             </div>
@@ -338,31 +347,52 @@ const Portfolio = () => {
               <div>
                 <h3 className="text-xl font-bold mb-6">Contact Information</h3>
                 <div className="space-y-4">
+                  {/* Email */}
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
                       <Mail className="w-5 h-5 text-gray-500" />
                     </div>
                     <div>
                       <p className="text-gray-500 text-sm">Email</p>
-                      <p className="text-black">dannykim00926@gmail.com</p>
+                      <a href="mailto:dannykim00926@gmail.com" className="text-black hover:underline">
+                        dannykim00926@gmail.com
+                      </a>
                     </div>
                   </div>
+                  {/* Phone */}
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
                       <Phone className="w-5 h-5 text-gray-500" />
                     </div>
                     <div>
                       <p className="text-gray-500 text-sm">Phone</p>
-                      <p className="text-black">202-873-0949</p>
+                      <a href="tel:+12015726631" className="text-black hover:underline">
+                        201-572-6631
+                      </a>
                     </div>
                   </div>
+                  {/* GitHub */}
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
                       <Github className="w-5 h-5 text-gray-500" />
                     </div>
                     <div>
                       <p className="text-gray-500 text-sm">GitHub</p>
-                      <p className="text-black">github.com/dannykim</p>
+                      <a href="https://github.com/calckorgo82" target="_blank" rel="noopener noreferrer" className="text-black hover:underline">
+                        github.com/calckorgo82
+                      </a>
+                    </div>
+                  </div>
+                  {/* LinkedIn */}
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                      <Linkedin className="w-5 h-5 text-gray-500" />
+                    </div>
+                    <div>
+                      <p className="text-gray-500 text-sm">LinkedIn</p>
+                      <a href="https://www.linkedin.com/in/dannykim3" target="_blank" rel="noopener noreferrer" className="text-black hover:underline">
+                        linkedin.com/in/dannykim3
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -374,33 +404,39 @@ const Portfolio = () => {
                   <div>
                     <input
                       type="text"
+                      name="name"
                       placeholder="Your Name"
+                      value={formState.name}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
                     />
                   </div>
                   <div>
                     <input
                       type="email"
+                      name="email"
                       placeholder="Your Email"
+                      value={formState.email}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
                     />
                   </div>
                   <div>
                     <textarea
+                      name="message"
                       rows={4}
                       placeholder="Your Message"
+                      value={formState.message}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent resize-none"
                     />
                   </div>
-                  <button
-                    onClick={() => {
-                      // Contact form submission logic would go here
-                      alert('Thank you for your message! I will get back to you soon.');
-                    }}
-                    className="w-full px-8 py-3 bg-black text-white rounded-xl font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105"
+                  <a
+                    href={`mailto:dannykim00926@gmail.com?subject=Message from ${encodeURIComponent(formState.name)} (${encodeURIComponent(formState.email)})&body=${encodeURIComponent(formState.message)}`}
+                    className="block w-full text-center px-8 py-3 bg-black text-white rounded-xl font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105"
                   >
                     Send Message
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -416,6 +452,9 @@ const Portfolio = () => {
             <div className="flex space-x-6">
               <a href="https://github.com/calckorgo82" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-black transition-colors">
                 <Github className="w-5 h-5" />
+              </a>
+              <a href="https://www.linkedin.com/in/dannykim3" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-black transition-colors">
+                <Linkedin className="w-5 h-5" />
               </a>
               <a href="mailto:dannykim00926@gmail.com" className="text-gray-500 hover:text-black transition-colors">
                 <Mail className="w-5 h-5" />
