@@ -33,9 +33,9 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-white text-black min-h-screen">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="text-xl font-bold">Danny Kim</div>
@@ -44,8 +44,8 @@ const Portfolio = () => {
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`capitalize transition-colors hover:text-gray-300 ${
-                    currentSection === section ? 'text-white' : 'text-gray-500'
+                  className={`capitalize transition-colors hover:text-gray-700 ${
+                    currentSection === section ? 'text-black' : 'text-gray-500'
                   }`}
                 >
                   {section}
@@ -63,28 +63,28 @@ const Portfolio = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               Danny Kim
             </h1>
-            <h2 className="text-2xl md:text-3xl text-gray-300 mb-4">
+            <h2 className="text-2xl md:text-3xl text-gray-600 mb-4">
               Deployment Strategist @ Palantir Technologies
             </h2>
-            <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto">
               Harvard graduate with expertise in product, data science, and AI.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <button
                 onClick={() => scrollToSection('resume')}
-                className="px-8 py-3 bg-white text-black rounded-xl font-semibold hover:bg-gray-200 transition-all duration-300 hover:scale-105"
+                className="px-8 py-3 bg-black text-white rounded-xl font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105"
               >
                 View Resume
               </button>
               <button
                 onClick={() => scrollToSection('projects')}
-                className="px-8 py-3 border border-gray-600 rounded-xl font-semibold hover:bg-gray-900 transition-all duration-300 hover:scale-105"
+                className="px-8 py-3 border border-gray-300 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105"
               >
                 View Projects
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="px-8 py-3 border border-gray-600 rounded-xl font-semibold hover:bg-gray-900 transition-all duration-300 hover:scale-105"
+                className="px-8 py-3 border border-gray-300 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105"
               >
                 Contact
               </button>
@@ -92,37 +92,35 @@ const Portfolio = () => {
           </div>
         </div>
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-6 h-6 text-gray-400" />
+          <ChevronDown className="w-6 h-6 text-gray-500" />
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gray-950">
+      <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`transition-all duration-1000 delay-300 ${isVisible.about ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-4xl font-bold mb-16 text-center">About</h2>
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                <p className="text-lg text-gray-600 leading-relaxed mb-6">
                   Korean-born Harvard graduate and product leader driven by leveraging a unique blend of statistical expertise and bicultural perspective to build transformative solutions that reshape how people approach the world.
                 </p>
-                <p className="text-lg text-gray-300 leading-relaxed mb-8">
+                <p className="text-lg text-gray-600 leading-relaxed mb-8">
                   Currently serving as a Deployment Strategist at Palantir Technologies, I specialize in bridging the gap between complex data systems and real-world applications. My experience spans product management, data science, and strategic implementation across fintech and government sectors.
                 </p>
-                <div className="flex items-center gap-4 text-gray-400">
+                <div className="flex items-center gap-4 text-gray-500">
                   <MapPin className="w-5 h-5" />
                   <span>Washington, DC / McLean, VA</span>
                 </div>
               </div>
               <div className="flex justify-center">
-                <div className="w-80 h-80 bg-gray-800 rounded-2xl flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-32 h-32 bg-gray-700 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-4xl font-bold text-gray-400">DK</span>
-                    </div>
-                    <p className="text-gray-400">Professional Photo</p>
-                  </div>
-                </div>
+                {/* Replace this div with an img tag for your photo */}
+                <img 
+                  src="/photo.jpg" 
+                  alt="A professional photo of Danny Kim" 
+                  className="w-80 h-80 rounded-2xl object-cover shadow-lg"
+                />
               </div>
             </div>
           </div>
@@ -181,12 +179,12 @@ const Portfolio = () => {
                   ]
                 }
               ].map((job, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl p-8 hover:bg-gray-800 transition-all duration-300 hover:scale-[1.02]">
+                <div key={index} className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-2">{job.title}</h3>
-                      <h4 className="text-lg text-gray-300 mb-2">{job.company}</h4>
-                      <div className="flex items-center gap-4 text-gray-400 mb-4">
+                      <h3 className="text-xl font-bold text-black mb-2">{job.title}</h3>
+                      <h4 className="text-lg text-gray-600 mb-2">{job.company}</h4>
+                      <div className="flex items-center gap-4 text-gray-500 mb-4">
                         <div className="flex items-center gap-2">
                           <MapPin className="w-4 h-4" />
                           <span>{job.location}</span>
@@ -200,8 +198,8 @@ const Portfolio = () => {
                   </div>
                   <ul className="space-y-2">
                     {job.highlights.map((highlight, i) => (
-                      <li key={i} className="text-gray-300 flex items-start">
-                        <span className="text-gray-600 mr-3">•</span>
+                      <li key={i} className="text-gray-600 flex items-start">
+                        <span className="text-gray-400 mr-3">•</span>
                         <span>{highlight}</span>
                       </li>
                     ))}
@@ -214,7 +212,7 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gray-950">
+      <section id="projects" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`transition-all duration-1000 delay-300 ${isVisible.projects ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-4xl font-bold mb-16 text-center">Projects</h2>
@@ -225,43 +223,43 @@ const Portfolio = () => {
                   description: "Mobile app platform for golfers to upload swings, receive community feedback, and track progress. Achieved 35 organic downloads on App Store.",
                   tech: ["React Native", "iOS", "Community Platform"],
                   status: "Live on App Store",
-                  link: "#"
+                  link: "https://apps.apple.com/us/app/swingswipe/id6738357762"
                 },
                 {
                   title: "SwapR Marketplace",
                   description: "Community-based marketplace for safe trading of used goods. Gained 100+ users and facilitated 100+ transactions in first 2 months.",
                   tech: ["Web App", "Instagram", "Marketplace"],
                   status: "MVP Launched",
-                  link: "#"
+                  link: "https://swaprmarket.glide.page"
                 },
                 {
                   title: "Sports ML Analysis",
                   description: "Predicted MLB team win rates and FIFA player performance using advanced regression models, random forests, and boosting techniques.",
                   tech: ["Python", "Machine Learning", "Data Analysis"],
                   status: "Research Project",
-                  link: "#"
+                  link: "https://github.com/calckorgo82"
                 }
               ].map((project, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl p-6 hover:bg-gray-800 transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
-                  <div className="flex items-start justify-between mb-4">
-                    <h3 className="text-xl font-bold text-white group-hover:text-gray-200">{project.title}</h3>
-                    <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                <a key={index} href={project.link} target="_blank" rel="noopener noreferrer" className="block">
+                  <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 group h-full flex flex-col">
+                    <div className="flex items-start justify-between mb-4">
+                      <h3 className="text-xl font-bold text-black group-hover:text-gray-800">{project.title}</h3>
+                      <ExternalLink className="w-5 h-5 text-gray-500 group-hover:text-black transition-colors" />
+                    </div>
+                    <p className="text-gray-600 mb-4 leading-relaxed flex-grow">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.tech.map((tech, i) => (
+                        <span key={i} className="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex items-center justify-between mt-auto">
+                      <span className="text-sm text-green-600">{project.status}</span>
+                      {/* The button is no longer needed since the whole card is a link */}
+                    </div>
                   </div>
-                  <p className="text-gray-300 mb-4 leading-relaxed">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech, i) => (
-                      <span key={i} className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-green-400">{project.status}</span>
-                    <button className="text-gray-400 hover:text-white transition-colors">
-                      View Project →
-                    </button>
-                  </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -275,49 +273,51 @@ const Portfolio = () => {
             <h2 className="text-4xl font-bold mb-16 text-center">Resume</h2>
             
             <div className="text-center mb-12">
-              <button className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-xl font-semibold hover:bg-gray-200 transition-all duration-300 hover:scale-105">
-                <Download className="w-5 h-5" />
-                Download Full Resume
-              </button>
+              <a href="/resume.pdf" download>
+                <button className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white rounded-xl font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105">
+                  <Download className="w-5 h-5" />
+                  Download Full Resume
+                </button>
+              </a>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-gray-900 rounded-xl p-6">
+              <div className="bg-gray-50 rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <Award className="w-6 h-6 text-gray-400" />
+                  <Award className="w-6 h-6 text-gray-500" />
                   <h3 className="text-xl font-bold">Education</h3>
                 </div>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold text-white">Harvard University</h4>
-                    <p className="text-gray-300">A.B. in Statistics/Data Science</p>
-                    <p className="text-gray-400">Cambridge, MA</p>
+                    <h4 className="font-semibold text-black">Harvard University</h4>
+                    <p className="text-gray-600">A.B. in Statistics/Data Science</p>
+                    <p className="text-gray-500">Cambridge, MA</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-gray-900 rounded-xl p-6">
+              <div className="bg-gray-50 rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <Award className="w-6 h-6 text-gray-400" />
+                  <Award className="w-6 h-6 text-gray-500" />
                   <h3 className="text-xl font-bold">Certifications</h3>
                 </div>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold text-white">Product Manager Machine Learning</h4>
-                    <p className="text-gray-300">Capital One & UC Berkeley Haas</p>
-                    <p className="text-gray-400">May 2024</p>
+                    <h4 className="font-semibold text-black">Product Manager Machine Learning</h4>
+                    <p className="text-gray-600">Capital One & UC Berkeley Haas</p>
+                    <p className="text-gray-500">May 2024</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-gray-900 rounded-xl p-6 md:col-span-2">
+              <div className="bg-gray-50 rounded-xl p-6 md:col-span-2">
                 <div className="flex items-center gap-3 mb-4">
-                  <Code className="w-6 h-6 text-gray-400" />
+                  <Code className="w-6 h-6 text-gray-500" />
                   <h3 className="text-xl font-bold">Technical Skills</h3>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {['Foundry', 'AI Prompting', 'Python', 'SQL', 'R', 'JavaScript', 'HTML/CSS', 'Scikit-learn', 'Tableau', 'Figma', 'JIRA', 'AWS'].map((skill) => (
-                    <div key={skill} className="px-3 py-2 bg-gray-800 text-center rounded-lg text-gray-300">
+                    <div key={skill} className="px-3 py-2 bg-gray-100 text-center rounded-lg text-gray-600">
                       {skill}
                     </div>
                   ))}
@@ -329,7 +329,7 @@ const Portfolio = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-950">
+      <section id="contact" className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`transition-all duration-1000 delay-300 ${isVisible.contact ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-4xl font-bold mb-16 text-center">Get In Touch</h2>
@@ -339,30 +339,30 @@ const Portfolio = () => {
                 <h3 className="text-xl font-bold mb-6">Contact Information</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
-                      <Mail className="w-5 h-5 text-gray-400" />
+                    <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                      <Mail className="w-5 h-5 text-gray-500" />
                     </div>
                     <div>
-                      <p className="text-gray-400 text-sm">Email</p>
-                      <p className="text-white">dannykim00926@gmail.com</p>
+                      <p className="text-gray-500 text-sm">Email</p>
+                      <p className="text-black">dannykim00926@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
-                      <Phone className="w-5 h-5 text-gray-400" />
+                    <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                      <Phone className="w-5 h-5 text-gray-500" />
                     </div>
                     <div>
-                      <p className="text-gray-400 text-sm">Phone</p>
-                      <p className="text-white">201-572-6631</p>
+                      <p className="text-gray-500 text-sm">Phone</p>
+                      <p className="text-black">202-873-0949</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
-                      <Github className="w-5 h-5 text-gray-400" />
+                    <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                      <Github className="w-5 h-5 text-gray-500" />
                     </div>
                     <div>
-                      <p className="text-gray-400 text-sm">GitHub</p>
-                      <p className="text-white">github.com/dannykim</p>
+                      <p className="text-gray-500 text-sm">GitHub</p>
+                      <p className="text-black">github.com/dannykim</p>
                     </div>
                   </div>
                 </div>
@@ -375,21 +375,21 @@ const Portfolio = () => {
                     <input
                       type="text"
                       placeholder="Your Name"
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
+                      className="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
                     />
                   </div>
                   <div>
                     <input
                       type="email"
                       placeholder="Your Email"
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
+                      className="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
                     />
                   </div>
                   <div>
                     <textarea
                       rows={4}
                       placeholder="Your Message"
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent resize-none"
+                      className="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent resize-none"
                     />
                   </div>
                   <button
@@ -397,7 +397,7 @@ const Portfolio = () => {
                       // Contact form submission logic would go here
                       alert('Thank you for your message! I will get back to you soon.');
                     }}
-                    className="w-full px-8 py-3 bg-white text-black rounded-xl font-semibold hover:bg-gray-200 transition-all duration-300 hover:scale-105"
+                    className="w-full px-8 py-3 bg-black text-white rounded-xl font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105"
                   >
                     Send Message
                   </button>
@@ -409,15 +409,15 @@ const Portfolio = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-gray-800">
+      <footer className="py-8 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 mb-4 md:mb-0">© 2025 Danny Kim. All rights reserved.</p>
+            <p className="text-gray-500 mb-4 md:mb-0">© 2025 Danny Kim. All rights reserved.</p>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://github.com/calckorgo82" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-black transition-colors">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="mailto:dannykim00926@gmail.com" className="text-gray-500 hover:text-black transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
