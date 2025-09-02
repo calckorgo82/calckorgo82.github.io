@@ -130,7 +130,7 @@ const Portfolio = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div>  
       </section>
 
       {/* Experience Section */}
@@ -366,8 +366,8 @@ const Portfolio = () => {
                     </div>
                     <div>
                       <p className="text-gray-500 text-sm">Phone</p>
-                      <a href="tel:+12015726631" className="text-black hover:underline">
-                        201-572-6631
+                      <a href="tel:+12028730949" className="text-black hover:underline">
+                        202-873-0949
                       </a>
                     </div>
                   </div>
